@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BattleShip.BLL.Ships;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,9 +27,29 @@ namespace BattleShip.UI
             _dm.DisplayStartMenu();
             player1.PlayerName = _im.GetPlayerName("1");
             player2.PlayerName =_im.GetPlayerName("2");
-          //  Console.WriteLine(player1.PlayerName);
-          //  Console.WriteLine(player2.PlayerName);
+            //  Console.WriteLine(player1.PlayerName);
+            //  Console.WriteLine(player2.PlayerName);
+            SetUpBoards();
+
             Console.ReadKey();
+        }
+
+        private void SetUpBoards()
+        {
+            PlaceShips(player1);
+            PlaceShips(player2);
+            //throw new NotImplementedException();
+        }
+
+        private void PlaceShips(Player player)
+        {
+            bool waitForOk = false;
+
+            foreach (Ship ship in Enum.GetValues(typeof(Ship)))
+            {
+
+            }
+           // throw new NotImplementedException();
         }
     }
 }
