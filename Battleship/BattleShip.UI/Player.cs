@@ -10,6 +10,7 @@ namespace BattleShip.UI
     public class Player
     {
         public string PlayerName;
-        Board PlayerBoard = new Board();
+        public Board PlayerBoard = new Board();
+        public Board OwnBoard = new Board();
     }
 }

@@ -35,19 +35,19 @@ namespace BattleShip.UI
                 Console.Write($"Enter a coordinate, A-J for x-axis and 1-10 for y-axis, ex D5:  ");
                 input = Console.ReadLine().ToUpper();
 
-                if (input.Length == 3 && input[0] >= 'A' && input[0] <= 'J' && input[1] == '1' && input[1] == '0')
+                if (input.Length == 3 && input[0] >= 'A' && input[0] <= 'J' && input[1] == '1' && input[2] == '0')
                 {
                     x = convertX(input[0]);
                     y = 10;
 
-                    return new Coordinate(x, y);
+                    return new Coordinate(x,y);
                 }
-                else if (input.Length == 2 && input[0] >= 'A' && input[0] <= 'J' && input[1] >= 1 && input[1] <= 9)
+                else if (input.Length == 2 && input[0] >= 'A' && input[0] <= 'J' && input[1] >= '1' && input[1] <= '9')
                 {
                     x = convertX(input[0]);
                     y = int.Parse(input.Substring(1, 1));
 
-                    return new Coordinate(x, y);
+                    return new Coordinate(x,y);
                 }
                 else Console.WriteLine("That is not a valid coordinate. Try again!");
 
@@ -98,11 +98,11 @@ namespace BattleShip.UI
                     switch (input[0])
                     {
                         case '1':
-                            return ShipDirection.Up;
-                        case '2':
-                            return ShipDirection.Down;
-                        case '3':
                             return ShipDirection.Left;
+                        case '2':
+                            return ShipDirection.Right;
+                        case '3':
+                            return ShipDirection.Up;
                         case '4':
                             return ShipDirection.Down;
                         default:
